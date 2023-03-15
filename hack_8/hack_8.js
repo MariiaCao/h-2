@@ -9,8 +9,16 @@
  * output => ["b@r","b@z","QUX"]   
  */
 let arr = ["foo","bar","baz","qux","echo"];
-let result = [];
+var filtrarPalabras = (palabra) => {
+    return palabra == 'bar' || palabra == 'baz' || palabra == 'qux';
+}
 
+var alterarPalabras = (palabra) => {
+    if (palabra == 'bar' || palabra == 'baz')  palabra = palabra.replace('a','@');
+    if (palabra == 'qux') palabra = palabra.toUpperCase();
+    return palabra
+}
 
+let result = arr.filter(filtrarPalabras).map(alterarPalabras);
 //export result
 module.exports = result;

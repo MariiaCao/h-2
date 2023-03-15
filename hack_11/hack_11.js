@@ -15,10 +15,23 @@
  * 
  * output => ["h@ck","one",2,"three",4,"five","h@ck","f00","Bar","b@z","quX","3ch0","h@ck"]   
  */
+let mutaciones = {
+    1: "one",
+    3: "three",
+    5: "five",
+    "foo": "f00",
+    "bar": "Bar",
+    "baz": "b@z",
+    "qux": "quX",
+    "echo": "3ch0"
+}
 let numberArray = [1,2,3,4,5];
 let stringArray = ["foo","bar","baz","qux","echo"]
-let result = [];
-
+let result = [...numberArray,...stringArray];
+result = result.map((item) => { return (mutaciones[item]) ? mutaciones[item] : item;});
+result.unshift('h@ck');
+result.push('h@ck');
+result.splice(6,0,'h@ck');
 
 //export result
 module.exports = result;

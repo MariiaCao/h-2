@@ -7,8 +7,8 @@
  * output => ["Foo","Bar","Baz","Qux","Echo"]   
  */
 let arr = ["foo","bar","baz","qux","echo"];
-let result = [];
-
-
+let result = arr.map((palabra, index) => {
+    return palabra[0].toUpperCase() + palabra.substring(1);
+});
 //export result
 module.exports = result;

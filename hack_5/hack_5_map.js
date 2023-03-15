@@ -7,6 +7,9 @@
  */
 let result = [];
 
-
+let filterNumbers = (num) => {
+    if(num % 2 == 1) result.push(num);
+}
+[1,2,3,4,5,6,7].reverse().map(filterNumbers);
 //export result
 module.exports = result;
